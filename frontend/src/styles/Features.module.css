@@ -1,0 +1,181 @@
+/* ── Features Section Styles ── */
+
+.features {
+  padding: var(--space-4xl) 0;
+  background: var(--color-bg-alt);
+  position: relative;
+  overflow: hidden;
+}
+
+.featuresContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-3xl);
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.yellowDash {
+  color: var(--color-secondary);
+  font-weight: 900;
+  margin-right: 8px;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-4xl);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.highlightText {
+  color: var(--color-secondary);
+}
+
+.viewAllBtn {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.viewAllBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.arrowCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: white;
+  color: var(--color-secondary);
+  border-radius: 50%;
+  margin-left: 12px;
+  font-size: 12px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.featureCard {
+  background: #F8F9FA;
+  border-radius: 16px;
+  padding: var(--space-xl);
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.featureCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.featureIconWrapper {
+  width: 48px;
+  height: 48px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  margin-bottom: var(--space-lg);
+}
+
+.featureIcon {
+  font-size: 20px;
+}
+
+/* Let's keep icon colors if they have them, but remove background from them since wrapper has white background */
+.featureIconBlue { color: var(--color-primary); }
+.featureIconPurple { color: var(--color-purple); }
+.featureIconGreen { color: var(--color-success); }
+.featureIconOrange { color: var(--color-warning); }
+.featureIconRed { color: var(--color-secondary); }
+.featureIconTeal { color: #14B8A6; }
+
+.featureTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.featureDescription {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  line-height: 1.6;
+  margin-bottom: var(--space-xl);
+  flex-grow: 1;
+}
+
+.learnMore {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+}
+
+.yellowArrow {
+  color: var(--color-secondary);
+  margin-left: 6px;
+  transition: transform 0.2s ease;
+}
+
+.featureCard:hover .yellowArrow {
+  transform: translateX(4px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 968px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sectionTitle {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+}

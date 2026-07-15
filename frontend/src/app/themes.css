@@ -1,0 +1,311 @@
+/* 20 Custom Themes */
+
+/* 1. Dark Blue */
+[data-theme="dark-blue"] {
+  --color-bg: #0f172a;
+  --color-bg-alt: #1e293b;
+  --color-bg-card: #1e293b;
+  --color-surface: #334155;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-tertiary: #94a3b8;
+  --color-text-muted: #64748b;
+  --color-primary: #3D7B52;
+  --color-primary-light: #60a5fa;
+  --color-primary-dark: #2C5E3E;
+  --color-primary-bg: rgba(59, 130, 246, 0.1);
+  --color-border: #334155;
+  --color-border-light: #1e293b;
+}
+
+/* 2. Light Emerald */
+[data-theme="light-emerald"] {
+  --color-primary: #059669;
+  --color-primary-light: #10b981;
+  --color-primary-dark: #047857;
+  --color-primary-bg: #ecfdf5;
+}
+
+/* 3. Dark Emerald */
+[data-theme="dark-emerald"] {
+  --color-bg: #022c22;
+  --color-bg-alt: #064e3b;
+  --color-bg-card: #064e3b;
+  --color-surface: #065f46;
+  --color-text-primary: #ecfdf5;
+  --color-text-secondary: #a7f3d0;
+  --color-text-tertiary: #6ee7b7;
+  --color-text-muted: #34d399;
+  --color-primary: #10b981;
+  --color-primary-light: #34d399;
+  --color-primary-dark: #059669;
+  --color-primary-bg: rgba(16, 185, 129, 0.1);
+  --color-border: #065f46;
+  --color-border-light: #064e3b;
+}
+
+/* 4. Light Purple */
+[data-theme="light-purple"] {
+  --color-primary: #7c3aed;
+  --color-primary-light: #8b5cf6;
+  --color-primary-dark: #6d28d9;
+  --color-primary-bg: #f5f3ff;
+}
+
+/* 5. Dark Purple */
+[data-theme="dark-purple"] {
+  --color-bg: #2e1065;
+  --color-bg-alt: #4c1d95;
+  --color-bg-card: #4c1d95;
+  --color-surface: #5b21b6;
+  --color-text-primary: #f5f3ff;
+  --color-text-secondary: #ddd6fe;
+  --color-text-tertiary: #c4b5fd;
+  --color-text-muted: #a78bfa;
+  --color-primary: #8b5cf6;
+  --color-primary-light: #a78bfa;
+  --color-primary-dark: #7c3aed;
+  --color-primary-bg: rgba(139, 92, 246, 0.1);
+  --color-border: #5b21b6;
+  --color-border-light: #4c1d95;
+}
+
+/* 6. Light Rose */
+[data-theme="light-rose"] {
+  --color-primary: #e11d48;
+  --color-primary-light: #f43f5e;
+  --color-primary-dark: #be123c;
+  --color-primary-bg: #fff1f2;
+}
+
+/* 7. Dark Rose */
+[data-theme="dark-rose"] {
+  --color-bg: #4c0519;
+  --color-bg-alt: #881337;
+  --color-bg-card: #881337;
+  --color-surface: #9f1239;
+  --color-text-primary: #fff1f2;
+  --color-text-secondary: #fecdd3;
+  --color-text-tertiary: #fda4af;
+  --color-text-muted: #fb7185;
+  --color-primary: #f43f5e;
+  --color-primary-light: #fb7185;
+  --color-primary-dark: #e11d48;
+  --color-primary-bg: rgba(244, 63, 94, 0.1);
+  --color-border: #9f1239;
+  --color-border-light: #881337;
+}
+
+/* 8. Light Amber */
+[data-theme="light-amber"] {
+  --color-primary: #d97706;
+  --color-primary-light: #f59e0b;
+  --color-primary-dark: #b45309;
+  --color-primary-bg: #fffbeb;
+}
+
+/* 9. Dark Amber */
+[data-theme="dark-amber"] {
+  --color-bg: #451a03;
+  --color-bg-alt: #78350f;
+  --color-bg-card: #78350f;
+  --color-surface: #92400e;
+  --color-text-primary: #fffbeb;
+  --color-text-secondary: #fde68a;
+  --color-text-tertiary: #fcd34d;
+  --color-text-muted: #fbbf24;
+  --color-primary: #f59e0b;
+  --color-primary-light: #fbbf24;
+  --color-primary-dark: #d97706;
+  --color-primary-bg: rgba(245, 158, 11, 0.1);
+  --color-border: #92400e;
+  --color-border-light: #78350f;
+}
+
+/* 10. Light Teal */
+[data-theme="light-teal"] {
+  --color-primary: #0d9488;
+  --color-primary-light: #14b8a6;
+  --color-primary-dark: #0f766e;
+  --color-primary-bg: #f0fdfa;
+}
+
+/* 11. Dark Teal */
+[data-theme="dark-teal"] {
+  --color-bg: #134e4a;
+  --color-bg-alt: #115e59;
+  --color-bg-card: #115e59;
+  --color-surface: #0f766e;
+  --color-text-primary: #f0fdfa;
+  --color-text-secondary: #ccfbf1;
+  --color-text-tertiary: #99f6e4;
+  --color-text-muted: #5eead4;
+  --color-primary: #14b8a6;
+  --color-primary-light: #5eead4;
+  --color-primary-dark: #0d9488;
+  --color-primary-bg: rgba(20, 184, 166, 0.1);
+  --color-border: #0f766e;
+  --color-border-light: #115e59;
+}
+
+/* 12. Midnight */
+[data-theme="midnight"] {
+  --color-bg: #09090b;
+  --color-bg-alt: #18181b;
+  --color-bg-card: #18181b;
+  --color-surface: #27272a;
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #e4e4e7;
+  --color-text-tertiary: #a1a1aa;
+  --color-text-muted: #71717a;
+  --color-primary: #3D7B52;
+  --color-primary-light: #60a5fa;
+  --color-primary-dark: #2C5E3E;
+  --color-primary-bg: rgba(59, 130, 246, 0.1);
+  --color-border: #27272a;
+  --color-border-light: #18181b;
+}
+
+/* 13. Dracula */
+[data-theme="dracula"] {
+  --color-bg: #282a36;
+  --color-bg-alt: #44475a;
+  --color-bg-card: #44475a;
+  --color-surface: #6272a4;
+  --color-text-primary: #f8f8f2;
+  --color-text-secondary: #f8f8f2;
+  --color-text-tertiary: #bfbfbf;
+  --color-text-muted: #6272a4;
+  --color-primary: #bd93f9;
+  --color-primary-light: #ff79c6;
+  --color-primary-dark: #8be9fd;
+  --color-primary-bg: rgba(189, 147, 249, 0.1);
+  --color-border: #6272a4;
+  --color-border-light: #44475a;
+}
+
+/* 14. Synthwave */
+[data-theme="synthwave"] {
+  --color-bg: #171520;
+  --color-bg-alt: #241b2f;
+  --color-bg-card: #241b2f;
+  --color-surface: #34294f;
+  --color-text-primary: #f8f8f2;
+  --color-text-secondary: #ff7edb;
+  --color-text-tertiary: #36f9f6;
+  --color-text-muted: #fede5d;
+  --color-primary: #ff7edb;
+  --color-primary-light: #36f9f6;
+  --color-primary-dark: #fe4450;
+  --color-primary-bg: rgba(255, 126, 219, 0.1);
+  --color-border: #34294f;
+  --color-border-light: #241b2f;
+}
+
+/* 15. Coffee */
+[data-theme="coffee"] {
+  --color-bg: #20161f;
+  --color-bg-alt: #382c35;
+  --color-bg-card: #382c35;
+  --color-surface: #50424d;
+  --color-text-primary: #f4ebe8;
+  --color-text-secondary: #dcd3d0;
+  --color-text-tertiary: #c4bbb8;
+  --color-text-muted: #aca3a0;
+  --color-primary: #dc944c;
+  --color-primary-light: #e6b27d;
+  --color-primary-dark: #c27a31;
+  --color-primary-bg: rgba(220, 148, 76, 0.1);
+  --color-border: #50424d;
+  --color-border-light: #382c35;
+}
+
+/* 16. Mint */
+[data-theme="mint"] {
+  --color-bg: #f2fcf5;
+  --color-bg-alt: #e6f9ed;
+  --color-bg-card: #e6f9ed;
+  --color-surface: #d1f4e0;
+  --color-text-primary: #1b4332;
+  --color-text-secondary: #2d6a4f;
+  --color-text-tertiary: #40916c;
+  --color-text-muted: #52b788;
+  --color-primary: #081c15;
+  --color-primary-light: #1b4332;
+  --color-primary-dark: #000000;
+  --color-primary-bg: rgba(8, 28, 21, 0.1);
+  --color-border: #d1f4e0;
+  --color-border-light: #e6f9ed;
+}
+
+/* 17. Cherry */
+[data-theme="cherry"] {
+  --color-bg: #fff0f3;
+  --color-bg-alt: #ffe3e8;
+  --color-bg-card: #ffe3e8;
+  --color-surface: #ffccd5;
+  --color-text-primary: #590d22;
+  --color-text-secondary: #800f2f;
+  --color-text-tertiary: #a4133c;
+  --color-text-muted: #c9184a;
+  --color-primary: #ff4d6d;
+  --color-primary-light: #ff758f;
+  --color-primary-dark: #c9184a;
+  --color-primary-bg: rgba(255, 77, 109, 0.1);
+  --color-border: #ffccd5;
+  --color-border-light: #ffe3e8;
+}
+
+/* 18. Ocean */
+[data-theme="ocean"] {
+  --color-bg: #f0f8ff;
+  --color-bg-alt: #e0f2fe;
+  --color-bg-card: #e0f2fe;
+  --color-surface: #bae6fd;
+  --color-text-primary: #082f49;
+  --color-text-secondary: #0c4a6e;
+  --color-text-tertiary: #075985;
+  --color-text-muted: #0369a1;
+  --color-primary: #0284c7;
+  --color-primary-light: #38bdf8;
+  --color-primary-dark: #0369a1;
+  --color-primary-bg: rgba(2, 132, 199, 0.1);
+  --color-border: #bae6fd;
+  --color-border-light: #e0f2fe;
+}
+
+/* 19. Cyberpunk */
+[data-theme="cyberpunk"] {
+  --color-bg: #fef08a;
+  --color-bg-alt: #fde047;
+  --color-bg-card: #fde047;
+  --color-surface: #facc15;
+  --color-text-primary: #000000;
+  --color-text-secondary: #111111;
+  --color-text-tertiary: #333333;
+  --color-text-muted: #555555;
+  --color-primary: #ef4444;
+  --color-primary-light: #f87171;
+  --color-primary-dark: #dc2626;
+  --color-primary-bg: rgba(239, 68, 68, 0.1);
+  --color-border: #facc15;
+  --color-border-light: #fde047;
+}
+
+/* 20. Autumn */
+[data-theme="autumn"] {
+  --color-bg: #fef3c7;
+  --color-bg-alt: #fde68a;
+  --color-bg-card: #fde68a;
+  --color-surface: #fcd34d;
+  --color-text-primary: #78350f;
+  --color-text-secondary: #92400e;
+  --color-text-tertiary: #b45309;
+  --color-text-muted: #d97706;
+  --color-primary: #ea580c;
+  --color-primary-light: #f97316;
+  --color-primary-dark: #c2410c;
+  --color-primary-bg: rgba(234, 88, 12, 0.1);
+  --color-border: #fcd34d;
+  --color-border-light: #fde68a;
+}

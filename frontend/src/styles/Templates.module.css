@@ -1,0 +1,230 @@
+/* ── Templates Page Styles ── */
+
+.templatesPage {
+  min-height: 100vh;
+  padding-top: calc(var(--nav-height) + var(--space-2xl));
+  padding-bottom: var(--space-4xl);
+  background: var(--color-bg-alt);
+}
+
+.templatesContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.templatesHeader {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  animation: fadeInDown 0.6s ease both;
+}
+
+.templatesTitle {
+  font-size: var(--font-size-3xl);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.templatesSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-tertiary);
+}
+
+.templatesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+/* ── Template Card ── */
+.templateCard {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--color-border-light);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  animation: fadeInUp 0.5s ease both;
+}
+
+.templateCard:nth-child(2) { animation-delay: 0.1s; }
+.templateCard:nth-child(3) { animation-delay: 0.2s; }
+.templateCard:nth-child(4) { animation-delay: 0.3s; }
+.templateCard:nth-child(5) { animation-delay: 0.4s; }
+
+.templateCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.templateCardSelected {
+  border-color: var(--color-primary) !important;
+  box-shadow: var(--shadow-primary);
+}
+
+.templatePreview {
+  height: 200px;
+  padding: var(--space-md);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.templateMini {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  font-size: 6px;
+  line-height: 1.4;
+  transform: scale(0.95);
+  transition: transform var(--transition-base);
+  overflow: hidden;
+}
+
+.templateCard:hover .templateMini {
+  transform: scale(1);
+}
+
+.templateInfo {
+  padding: var(--space-lg);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.templateName {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.templateBadge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  background: var(--color-success);
+  color: white;
+  opacity: 0;
+  transform: scale(0);
+  transition: all var(--transition-spring);
+}
+
+.templateCardSelected .templateBadge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.templateDesc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+}
+
+.templateFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.templateFeatureTag {
+  padding: 4px 10px;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+}
+
+/* ── Continue Button ── */
+.continueSection {
+  text-align: center;
+  animation: fadeInUp 0.6s ease 0.5s both;
+}
+
+.continueBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 16px 40px;
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-primary);
+}
+
+.continueBtn:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(44, 94, 62, 0.4);
+}
+
+.continueBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Mini template previews ── */
+.miniModern {
+  background: white;
+  display: flex;
+  gap: 2px;
+}
+
+.miniModernSidebar {
+  width: 35%;
+  background: #1e293b;
+  border-radius: 2px;
+  padding: 8px;
+}
+
+.miniModernMain {
+  width: 65%;
+  padding: 8px;
+}
+
+.miniLine {
+  height: 3px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  margin-bottom: 3px;
+}
+
+.miniLineLight {
+  background: rgba(255,255,255,0.2);
+}
+
+.miniLinePrimary {
+  background: #2C5E3E;
+  width: 50%;
+  height: 4px;
+}
+
+.miniSectionTitle {
+  height: 2px;
+  background: #2C5E3E;
+  width: 40%;
+  margin: 6px 0 4px;
+}
+
+@media (max-width: 640px) {
+  .templatesGrid {
+    grid-template-columns: 1fr;
+  }
+}

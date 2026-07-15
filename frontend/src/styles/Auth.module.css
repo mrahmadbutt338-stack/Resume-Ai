@@ -1,0 +1,181 @@
+.authContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 24px;
+}
+
+.authCard {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.authHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.authTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.authSubtitle {
+  color: #a1a1aa;
+  font-size: 14px;
+}
+
+.authLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.authLink:hover {
+  text-decoration: underline;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.labelContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.forgotPassword {
+  font-size: 13px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #09090b;
+  border: 1px solid #27272a;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: #52525b;
+}
+
+.inputHint {
+  font-size: 13px;
+  color: #71717a;
+  margin-top: 8px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 12px;
+  background-color: #e4e4e7;
+  color: #18181b;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s;
+}
+
+.submitBtn:hover {
+  background-color: #ffffff;
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 32px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #27272a;
+}
+
+.dividerText {
+  padding: 0 16px;
+  color: #a1a1aa;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.socialGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.socialBtn.passkey {
+  background-color: #27272a;
+  color: white;
+}
+
+.socialBtn.google {
+  background-color: #3D7B52;
+  color: white;
+}
+
+.socialBtn.github {
+  background-color: #27272a;
+  color: white;
+}
+
+.socialBtn.linkedin {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+.socialIcon {
+  width: 18px;
+  height: 18px;
+}
