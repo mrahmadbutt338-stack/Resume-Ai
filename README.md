@@ -1,92 +1,36 @@
-# AI Resume Builder
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-An AI-powered resume builder platform built with Next.js, Express.js, MongoDB, and OpenAI.
+## Getting Started
 
-## 🚀 Quick Start
+First, run the development server:
 
-### Prerequisites
-- Node.js 18+ installed
-- MongoDB running locally (or an Atlas connection string)
-- (Optional) OpenAI API key for AI features
-
-### 1. Backend Setup
-
-```bash
-cd backend
-npm install
-```
-
-Create a `.env` file (one is already provided with defaults):
-```
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/resume-builder
-OPENAI_API_KEY=your_openai_api_key_here
-FRONTEND_URL=http://localhost:3000
-```
-
-Start the backend:
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### 2. Frontend Setup
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-cd frontend
-npm install   # (already done if scaffolded)
-```
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-Start the frontend:
-```bash
-npm run dev
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### 3. Open the App
+## Learn More
 
-Visit **http://localhost:3000** in your browser.
+To learn more about Next.js, take a look at the following resources:
 
-## 📂 Project Structure
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-```
-├── frontend/          # Next.js React application
-│   ├── src/app/       # App Router pages
-│   ├── src/components # Reusable UI components
-│   ├── src/templates  # 5 resume template renderers
-│   ├── src/styles     # CSS modules
-│   └── src/utils      # API client utility
-│
-├── backend/           # Express.js API server
-│   ├── config/        # MongoDB connection
-│   ├── controllers/   # Route handlers
-│   ├── middleware/     # Error handling
-│   ├── models/        # Mongoose schemas
-│   ├── routes/        # API routes
-│   └── utils/         # OpenAI + PDF templates
-```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## 🎨 Features
+## Deploy on Vercel
 
-- **Two Creation Modes**: Structured form OR AI prompt
-- **5 Resume Templates**: Modern, Minimal, Creative, Corporate, Elegant
-- **AI Integration**: OpenAI-powered content generation & enhancement
-- **Live Preview**: Real-time resume preview with inline editing
-- **PDF Export**: High-quality PDF download via Puppeteer
-- **Responsive Design**: Works on mobile, tablet, and desktop
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## 🔑 API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/resumes/templates` | List available templates |
-| POST | `/api/resumes` | Save resume data |
-| GET | `/api/resumes/:id` | Get resume by ID |
-| PUT | `/api/resumes/:id` | Update resume |
-| POST | `/api/ai/generate-from-prompt` | Generate resume from text |
-| POST | `/api/ai/enhance` | Enhance resume content |
-| POST | `/api/pdf/generate` | Generate PDF |
-
-## ⚠️ Notes
-
-- Without an OpenAI API key, the app uses mock/sample data for AI features
-- Puppeteer requires downloading a Chromium binary (~280MB) on first `npm install`
-- Make sure MongoDB is running before starting the backend
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
