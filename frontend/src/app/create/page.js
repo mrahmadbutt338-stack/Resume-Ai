@@ -88,10 +88,21 @@ export default function CreatePage() {
       sessionStorage.setItem('resumeData', JSON.stringify(finalData));
       sessionStorage.setItem('selectedTemplate', selectedTemplate);
       
-      router.push('/preview');
+      // Dynamic import of toast to avoid SSR issues if any, or just standard toast
+      import('react-hot-toast').then(({ default: toast }) => {
+        toast.success('✅ Your CV has been generated successfully.');
+      });
+      
+      // Add a slight delay for better UX and letting the toast appear before the route change unmounts everything
+      setTimeout(() => {
+        router.push('/preview');
+      }, 500);
+
     } catch (error) {
       console.error('Error:', error);
-      alert("There was an error generating your resume.");
+      import('react-hot-toast').then(({ default: toast }) => {
+        toast.error("There was an error generating your resume.");
+      });
       setIsGenerating(false);
     }
   };

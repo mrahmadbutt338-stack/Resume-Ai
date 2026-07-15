@@ -43,6 +43,10 @@ export async function POST(request) {
 
     await connectToDatabase();
 
+    // The user requested that when saving a new profile, all previous profiles should be deleted.
+    // "baaki sab wahan se data delete ho jana chahiye"
+    await Resume.deleteMany({ userId: session.user.id });
+
     const newResume = await Resume.create({
       userId: session.user.id, // Strictly bind to authenticated user
       name,

@@ -1,40 +1,5 @@
 import React from 'react';
-import ModernTemplate from '../templates/ModernTemplate';
-import CreativeTemplate from '../templates/CreativeTemplate';
-import CorporateTemplate from '../templates/CorporateTemplate';
-import MinimalTemplate from '../templates/MinimalTemplate';
-import ElegantTemplate from '../templates/ElegantTemplate';
-import PhotoTemplate from '../templates/PhotoTemplate';
-import BorderedTemplate from '../templates/BorderedTemplate';
-import SidebarPhotoTemplate from '../templates/SidebarPhotoTemplate';
-
-const templateMap = {
-  'with-pic-1': ModernTemplate,
-  'with-pic-2': CreativeTemplate,
-  'with-pic-3': ElegantTemplate,
-  'with-pic-4': CorporateTemplate,
-  'with-pic-5': PhotoTemplate,
-  'with-pic-6': SidebarPhotoTemplate,
-  'with-pic-7': BorderedTemplate,
-  'with-pic-8': MinimalTemplate,
-  'with-pic-9': ModernTemplate,
-  'with-pic-10': CreativeTemplate,
-
-  'no-pic-1': MinimalTemplate,
-  'no-pic-2': CorporateTemplate,
-  'no-pic-3': ElegantTemplate,
-  'no-pic-4': ModernTemplate,
-  'no-pic-5': CreativeTemplate,
-  'no-pic-6': BorderedTemplate,
-  'no-pic-7': MinimalTemplate,
-  'no-pic-8': CorporateTemplate,
-  'no-pic-9': ElegantTemplate,
-  'no-pic-10': ModernTemplate,
-  
-  // Fallbacks
-  'modern': ModernTemplate,
-  'creative': CreativeTemplate,
-};
+import UniversalATSTemplate from '../templates/UniversalATSTemplate';
 
 /**
  * Removes empty array sections from the data so templates don't render empty headers
@@ -116,14 +81,14 @@ export default function TemplateRenderer({ data }) {
 
   const normalized = normalizeData(data);
   const cleanedData = cleanResumeData(normalized);
-  const selectedTheme = cleanedData.selectedTemplate || 'modern';
-  const SelectedTemplateComponent = templateMap[selectedTheme] || templateMap['modern'];
   
-  const templateConfig = cleanedData.templateConfig || { withPicture: true, colorTheme: '#2C5E3E' };
+  // BYPASS TEMPLATE SELECTION: Always use the Unified ATS Template for generation
+  const templateConfig = cleanedData.templateConfig || { withPicture: true, colorTheme: '#000000' };
 
   return (
     <div className="w-full h-full bg-white text-black resume-render-container" style={{ minHeight: '297mm', width: '210mm', position: 'relative' }}>
-      <SelectedTemplateComponent data={cleanedData} config={templateConfig} colorTheme={templateConfig?.colorTheme} />
+      <UniversalATSTemplate data={cleanedData} config={templateConfig} colorTheme={templateConfig?.colorTheme} />
     </div>
   );
 }
+

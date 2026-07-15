@@ -159,7 +159,8 @@ export default function FormMode({ onSubmit }) {
       if (!res.ok) throw new Error('Failed to save');
       
       const json = await res.json();
-      setSavedProfiles([json.resume, ...savedProfiles]);
+      // Only keep the newly saved profile since the backend deletes all previous ones
+      setSavedProfiles([json.resume]);
       setShowSaveModal(false);
       setProfileName('');
       toast.success('Resume information saved successfully!', { id: toastId });
@@ -570,25 +571,41 @@ export default function FormMode({ onSubmit }) {
         </div>
 
         {/* Bottom Navigation Bar */}
-        <div className="mt-12 pt-6 border-t border-slate-200 flex justify-between items-center">
-          <div className="flex gap-3">
+        <div className="mt-12 pt-6 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+          <div className="flex gap-2 sm:gap-3 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
             <button
               onClick={prevStep}
               disabled={step === 0}
-              className={`flex items-center gap-2 px-6 py-3 font-bold rounded-xl transition-all ${
+              className={`flex-shrink-0 flex items-center gap-2 px-4 sm:px-6 py-3 font-bold rounded-xl transition-all ${
                 step === 0 ? 'text-slate-300 cursor-not-allowed' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
               }`}
             >
               <ChevronLeft size={20} /> Back
             </button>
             
-            {/* Save Info button is now globally available on every step next to the Back button */}
             <button
               onClick={handleSaveProfileClick}
-              className="flex items-center gap-2 px-4 py-3 font-bold rounded-xl border-2 border-slate-200 text-slate-700 hover:border-orange-burnt hover:text-orange-burnt transition-all bg-white"
+              className="flex-shrink-0 flex items-center gap-2 px-4 py-3 font-bold rounded-xl border-2 border-slate-200 text-slate-700 hover:border-orange-burnt hover:text-orange-burnt transition-all bg-white"
               title="Save all your progress as a Profile to your account"
             >
               <Save size={20} /> <span className="hidden sm:inline">Save Info</span>
+            </button>
+
+            <button
+              onClick={() => {
+                if (status === 'unauthenticated') {
+                  import('react-hot-toast').then(({ default: toast }) => {
+                    toast.error('Please log in to load your saved resumes.');
+                  });
+                  router.push('/login');
+                  return;
+                }
+                setShowLoadModal(true);
+              }}
+              className="flex-shrink-0 flex items-center gap-2 px-4 py-3 font-bold rounded-xl border-2 border-slate-200 text-slate-700 hover:border-blue-600 hover:text-blue-600 transition-all bg-white"
+              title="Load a previously saved profile"
+            >
+              <DownloadCloud size={20} /> <span className="hidden sm:inline">Load Info</span>
             </button>
           </div>
           
@@ -596,11 +613,12 @@ export default function FormMode({ onSubmit }) {
             Step {step + 1} of {STEPS.length}
           </div>
 
+          <div className="w-full md:w-auto flex justify-end">
           {step === STEPS.length - 1 ? (
             <button
               onClick={handleFinish}
               disabled={!canProceed()}
-              className={`flex items-center gap-2 px-8 py-3 font-bold rounded-xl shadow-premium-orange transition-all ${
+              className={`flex items-center justify-center w-full md:w-auto gap-2 px-8 py-3 font-bold rounded-xl shadow-premium-orange transition-all ${
                 canProceed() ? 'bg-gradient-to-r from-orange-burnt to-orange-warm text-white hover:scale-105' : 'bg-slate-200 text-slate-400 cursor-not-allowed'
               }`}
             >
@@ -610,13 +628,14 @@ export default function FormMode({ onSubmit }) {
             <button
               onClick={nextStep}
               disabled={!canProceed()}
-              className={`flex items-center gap-2 px-8 py-3 font-bold rounded-xl transition-all ${
+              className={`flex items-center justify-center w-full md:w-auto gap-2 px-8 py-3 font-bold rounded-xl transition-all ${
                 canProceed() ? 'bg-slate-900 text-white hover:bg-slate-800 shadow-md hover:shadow-lg' : 'bg-slate-200 text-slate-400 cursor-not-allowed'
               }`}
             >
               Continue <ChevronRight size={20} />
             </button>
           )}
+          </div>
         </div>
       </div>
 

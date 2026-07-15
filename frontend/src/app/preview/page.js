@@ -43,8 +43,8 @@ export default function PreviewPage() {
       margin:       0,
       filename:     `${resumeData?.personalInfo?.firstName || 'Resume'}_CV.pdf`,
       image:        { type: 'jpeg', quality: 1 },
-      html2canvas:  { scale: 3, useCORS: true, letterRendering: true },
-      jsPDF:        { unit: 'px', format: [800, 1131], orientation: 'portrait' }
+      html2canvas:  { scale: 2, useCORS: true, logging: false },
+      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
     };
 
     const html2pdf = (await import('html2pdf.js')).default;

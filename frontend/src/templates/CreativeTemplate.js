@@ -125,6 +125,89 @@ export default function CreativeTemplate({ data, config }) {
             ))}
           </>
         )}
+
+        {data?.volunteerExperience && data.volunteerExperience.length > 0 && (
+          <>
+            <div className={styles.creativeSection}>Volunteer Experience</div>
+            {data.volunteerExperience.map((v, i) => (
+              <div key={i} className={styles.entry}>
+                <div className={styles.entryHeader}>
+                  <div><span className={styles.entryTitle}>{v.role}</span> @ {v.organization}</div>
+                  <span className={styles.entryDate}>{v.startDate} – {v.current ? 'Present' : v.endDate}</span>
+                </div>
+                {v.description && <div style={{ fontSize: '9px', color: '#555', marginTop: '2px' }}>{v.description}</div>}
+              </div>
+            ))}
+          </>
+        )}
+
+        {data?.internships && data.internships.length > 0 && (
+          <>
+            <div className={styles.creativeSection}>Internships</div>
+            {data.internships.map((e, i) => (
+              <div key={i} className={styles.entry}>
+                <div className={styles.entryHeader}>
+                  <div><span className={styles.entryTitle}>{e.position}</span> @ {e.company}</div>
+                  <span className={styles.entryDate}>{e.startDate} – {e.current ? 'Present' : e.endDate}</span>
+                </div>
+                {e.description && <div style={{ fontSize: '9px', color: '#555', marginTop: '2px' }}>{e.description}</div>}
+              </div>
+            ))}
+          </>
+        )}
+
+        {data?.awards && data.awards.length > 0 && (
+          <>
+            <div className={styles.creativeSection}>Awards</div>
+            {data.awards.map((a, i) => (
+              <div key={i} className={styles.entry}>
+                <div className={styles.entryTitle}>{a.title} {a.date && <span className={styles.entryDate} style={{marginLeft: '8px'}}>{a.date}</span>}</div>
+                {a.issuer && <div className={styles.entrySubtitle}>{a.issuer}</div>}
+                {a.description && <div style={{ fontSize: '9px', color: '#555' }}>{a.description}</div>}
+              </div>
+            ))}
+          </>
+        )}
+
+        {data?.achievements && data.achievements.length > 0 && (
+          <>
+            <div className={styles.creativeSection}>Achievements</div>
+            {data.achievements.map((a, i) => (
+              <div key={i} className={styles.entry}>
+                <div className={styles.entryTitle}>{a.title} {a.date && <span className={styles.entryDate} style={{marginLeft: '8px'}}>{a.date}</span>}</div>
+                {a.description && <div style={{ fontSize: '9px', color: '#555', marginTop: '2px' }}>{a.description}</div>}
+              </div>
+            ))}
+          </>
+        )}
+
+        {data?.publications && data.publications.length > 0 && (
+          <>
+            <div className={styles.creativeSection}>Publications</div>
+            {data.publications.map((p, i) => (
+              <div key={i} className={styles.entry}>
+                <div className={styles.entryTitle}>{p.title}</div>
+                {p.publisher && <div className={styles.entrySubtitle}>{p.publisher} {p.date && `• ${p.date}`}</div>}
+                {p.description && <div style={{ fontSize: '9px', color: '#555', marginTop: '2px' }}>{p.description}</div>}
+              </div>
+            ))}
+          </>
+        )}
+
+        {data?.customSections && data.customSections.length > 0 && data.customSections.map((cs, cIdx) => (
+          <div key={`cs-${cIdx}`}>
+            <div className={styles.creativeSection}>{cs.title || 'Additional Information'}</div>
+            {cs.items?.map((item, i) => (
+              <div key={i} className={styles.entry}>
+                <div className={styles.entryTitle}>
+                  {item.name} {item.date && <span className={styles.entryDate} style={{marginLeft: '8px'}}>{item.date}</span>}
+                </div>
+                {item.subtitle && <div className={styles.entrySubtitle}>{item.subtitle}</div>}
+                {item.description && <div style={{ fontSize: '9px', color: '#555', marginTop: '2px' }}>{item.description}</div>}
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );

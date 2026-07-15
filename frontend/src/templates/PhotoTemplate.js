@@ -69,6 +69,40 @@ export default function PhotoTemplate({ data, colorTheme, showPhoto = true }) {
               ))}
             </>
           )}
+
+          {data?.awards?.length > 0 && (
+            <>
+              <div className={styles.photoSectionTitle}>Awards</div>
+              {data.awards.map((a, i) => (
+                <div key={i} className={styles.bdEntry}>
+                  <div style={{ fontWeight: 'bold', fontSize: '10px', color: '#1a1a1a' }}>{a.title}</div>
+                  <div style={{ fontSize: '9px', color: '#64748b' }}>{a.issuer}</div>
+                </div>
+              ))}
+            </>
+          )}
+
+          {data?.achievements?.length > 0 && (
+            <>
+              <div className={styles.photoSectionTitle}>Achievements</div>
+              {data.achievements.map((a, i) => (
+                <div key={i} className={styles.bdEntry}>
+                  <div style={{ fontWeight: 'bold', fontSize: '10px', color: '#1a1a1a' }}>{a.title}</div>
+                </div>
+              ))}
+            </>
+          )}
+
+          {data?.publications?.length > 0 && (
+            <>
+              <div className={styles.photoSectionTitle}>Publications</div>
+              {data.publications.map((p, i) => (
+                <div key={i} className={styles.bdEntry}>
+                  <div style={{ fontWeight: 'bold', fontSize: '10px', color: '#1a1a1a' }}>{p.title}</div>
+                </div>
+              ))}
+            </>
+          )}
         </div>
         
         <div className={styles.photoMain}>
@@ -131,6 +165,54 @@ export default function PhotoTemplate({ data, colorTheme, showPhoto = true }) {
               ))}
             </>
           )}
+
+          {data?.volunteerExperience?.length > 0 && (
+            <>
+              <div className={styles.photoSectionTitle}>Volunteer Experience</div>
+              {data.volunteerExperience.map((v, i) => (
+                <div key={i} className={styles.bdEntry} style={{ marginBottom: '10px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                    <div style={{ fontWeight: 'bold', fontSize: '11px' }}>{v.role}</div>
+                    <div style={{ fontSize: '9px', color: '#666' }}>{v.startDate} - {v.current ? 'Present' : v.endDate}</div>
+                  </div>
+                  <div style={{ fontStyle: 'italic', fontSize: '10px', color: 'var(--template-primary)' }}>{v.organization}</div>
+                  {v.description && <div style={{ fontSize: '9px', color: '#475569', marginTop: '2px' }}>{v.description}</div>}
+                </div>
+              ))}
+            </>
+          )}
+
+          {data?.internships?.length > 0 && (
+            <>
+              <div className={styles.photoSectionTitle}>Internships</div>
+              {data.internships.map((e, i) => (
+                <div key={i} className={styles.bdEntry} style={{ marginBottom: '15px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                    <div style={{ fontWeight: 'bold', fontSize: '12px' }}>{e.position}</div>
+                    <div style={{ fontSize: '9px', color: '#666' }}>{e.startDate} - {e.current ? 'Present' : e.endDate}</div>
+                  </div>
+                  <div style={{ fontStyle: 'italic', fontSize: '11px', color: 'var(--template-primary)' }}>{e.company} {e.location && `- ${e.location}`}</div>
+                  {e.description && <div style={{ fontSize: '9px', color: '#475569', marginTop: '2px' }}>{e.description}</div>}
+                </div>
+              ))}
+            </>
+          )}
+
+          {data?.customSections?.length > 0 && data.customSections.map((cs, cIdx) => (
+            <div key={`cs-${cIdx}`}>
+              <div className={styles.photoSectionTitle}>{cs.title || 'Additional Info'}</div>
+              {cs.items?.map((item, i) => (
+                <div key={i} className={styles.bdEntry} style={{ marginBottom: '10px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                    <div style={{ fontWeight: 'bold', fontSize: '11px' }}>{item.name}</div>
+                    {item.date && <div style={{ fontSize: '9px', color: '#666' }}>{item.date}</div>}
+                  </div>
+                  {item.subtitle && <div style={{ fontStyle: 'italic', fontSize: '10px', color: 'var(--template-primary)' }}>{item.subtitle}</div>}
+                  {item.description && <div style={{ fontSize: '9px', color: '#475569', marginTop: '2px' }}>{item.description}</div>}
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </div>

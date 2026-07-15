@@ -66,6 +66,52 @@ export default function BorderedTemplate({ data, colorTheme }) {
               ))}
             </>
           )}
+
+          {data?.volunteerExperience?.length > 0 && (
+            <>
+              <div className={styles.bdSectionTitle}>Volunteer Experience</div>
+              {data.volunteerExperience.map((v, i) => (
+                <div key={i} className={styles.bdEntry} style={{ marginBottom: '15px' }}>
+                  <div style={{ fontWeight: 'bold', fontSize: '11px' }}>{v.role}</div>
+                  <div style={{ fontStyle: 'italic', fontSize: '10px', color: 'var(--template-primary)' }}>{v.organization}</div>
+                  <div style={{ fontSize: '9px', color: '#666', marginBottom: '4px' }}>
+                    🗓️ {v.startDate} - {v.current ? 'Present' : v.endDate}
+                  </div>
+                  {v.description && <div style={{ fontSize: '9px', color: '#475569', marginTop: '2px' }}>{v.description}</div>}
+                </div>
+              ))}
+            </>
+          )}
+
+          {data?.internships?.length > 0 && (
+            <>
+              <div className={styles.bdSectionTitle}>Internships</div>
+              {data.internships.map((e, i) => (
+                <div key={i} className={styles.bdEntry} style={{ marginBottom: '15px' }}>
+                  <div style={{ fontWeight: 'bold', fontSize: '12px' }}>{e.position}</div>
+                  <div style={{ fontStyle: 'italic', fontSize: '11px', color: 'var(--template-primary)' }}>{e.company}</div>
+                  <div style={{ fontSize: '9px', color: '#666', marginBottom: '4px' }}>
+                    🗓️ {e.startDate} - {e.current ? 'Present' : e.endDate} &nbsp; 📍 {e.location}
+                  </div>
+                  {e.description && <div style={{ fontSize: '9px', color: '#475569', marginTop: '2px' }}>{e.description}</div>}
+                </div>
+              ))}
+            </>
+          )}
+
+          {data?.customSections?.length > 0 && data.customSections.map((cs, cIdx) => (
+            <div key={`cs-${cIdx}`}>
+              <div className={styles.bdSectionTitle}>{cs.title || 'Additional Info'}</div>
+              {cs.items?.map((item, i) => (
+                <div key={i} className={styles.bdEntry} style={{ marginBottom: '15px' }}>
+                  <div style={{ fontWeight: 'bold', fontSize: '11px' }}>{item.name}</div>
+                  {item.subtitle && <div style={{ fontStyle: 'italic', fontSize: '10px', color: 'var(--template-primary)' }}>{item.subtitle}</div>}
+                  {item.date && <div style={{ fontSize: '9px', color: '#666', marginBottom: '4px' }}>🗓️ {item.date}</div>}
+                  {item.description && <div style={{ fontSize: '9px', color: '#475569', marginTop: '2px' }}>{item.description}</div>}
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
         
         <div className={styles.bdSidebar}>
@@ -120,6 +166,46 @@ export default function BorderedTemplate({ data, colorTheme }) {
                 {data.certifications.map((c, i) => (
                   <li key={i} style={{ marginBottom: '4px' }}>
                     <div style={{ fontWeight: 600, fontSize: '10px' }}>{c.name}</div>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          {data?.awards?.length > 0 && (
+            <>
+              <div className={styles.bdSectionTitle}>Awards</div>
+              <ul className={styles.highlights} style={{ paddingLeft: '14px' }}>
+                {data.awards.map((a, i) => (
+                  <li key={i} style={{ marginBottom: '4px' }}>
+                    <div style={{ fontWeight: 600, fontSize: '10px' }}>{a.title}</div>
+                    <div style={{ fontSize: '9px', color: '#475569' }}>{a.issuer}</div>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          {data?.achievements?.length > 0 && (
+            <>
+              <div className={styles.bdSectionTitle}>Achievements</div>
+              <ul className={styles.highlights} style={{ paddingLeft: '14px' }}>
+                {data.achievements.map((a, i) => (
+                  <li key={i} style={{ marginBottom: '4px' }}>
+                    <div style={{ fontWeight: 600, fontSize: '10px' }}>{a.title}</div>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          {data?.publications?.length > 0 && (
+            <>
+              <div className={styles.bdSectionTitle}>Publications</div>
+              <ul className={styles.highlights} style={{ paddingLeft: '14px' }}>
+                {data.publications.map((p, i) => (
+                  <li key={i} style={{ marginBottom: '4px' }}>
+                    <div style={{ fontWeight: 600, fontSize: '10px' }}>{p.title}</div>
                   </li>
                 ))}
               </ul>

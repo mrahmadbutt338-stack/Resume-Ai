@@ -133,6 +133,111 @@ export default function ElegantTemplate({ data }) {
           ))}
         </>
       )}
+
+      {data?.volunteerExperience?.length > 0 && (
+        <>
+          <div className={styles.elegantSection}>Volunteer Experience</div>
+          {data.volunteerExperience.map((v, i) => (
+            <div key={i} className={styles.entry}>
+              <div className={styles.entryHeader}>
+                <div>
+                  <span className={styles.entryTitle}>{v.role}</span>
+                  {' '}<span className={styles.elegantAccent}>|</span>{' '}
+                  {v.organization}
+                </div>
+                <span className={styles.entryDate}>{v.startDate} – {v.current ? 'Present' : v.endDate}</span>
+              </div>
+              {v.description && <div style={{ fontSize: '9px', color: '#6b7280', marginTop: '2px' }}>{v.description}</div>}
+            </div>
+          ))}
+        </>
+      )}
+
+      {data?.internships?.length > 0 && (
+        <>
+          <div className={styles.elegantSection}>Internships</div>
+          {data.internships.map((e, i) => (
+            <div key={i} className={styles.entry}>
+              <div className={styles.entryHeader}>
+                <div>
+                  <span className={styles.entryTitle}>{e.position}</span>
+                  {' '}<span className={styles.elegantAccent}>|</span>{' '}
+                  {e.company}
+                </div>
+                <span className={styles.entryDate}>{e.startDate} – {e.current ? 'Present' : e.endDate}</span>
+              </div>
+              {e.location && <div className={styles.entrySubtitle}>{e.location}</div>}
+              {e.description && <div style={{ fontSize: '9px', color: '#6b7280', marginTop: '2px' }}>{e.description}</div>}
+            </div>
+          ))}
+        </>
+      )}
+
+      {data?.awards?.length > 0 && (
+        <>
+          <div className={styles.elegantSection}>Awards</div>
+          {data.awards.map((a, i) => (
+            <div key={i} className={styles.entry}>
+              <div className={styles.entryHeader}>
+                <div>
+                  <span className={styles.entryTitle}>{a.title}</span>
+                  {' '}<span className={styles.elegantAccent}>|</span>{' '}
+                  {a.issuer}
+                </div>
+                <span className={styles.entryDate}>{a.date}</span>
+              </div>
+              {a.description && <div style={{ fontSize: '9px', color: '#6b7280', marginTop: '2px' }}>{a.description}</div>}
+            </div>
+          ))}
+        </>
+      )}
+
+      {data?.achievements?.length > 0 && (
+        <>
+          <div className={styles.elegantSection}>Achievements</div>
+          {data.achievements.map((a, i) => (
+            <div key={i} className={styles.entry}>
+              <div className={styles.entryHeader}>
+                <div><span className={styles.entryTitle}>{a.title}</span></div>
+                <span className={styles.entryDate}>{a.date}</span>
+              </div>
+              {a.description && <div style={{ fontSize: '9px', color: '#6b7280', marginTop: '2px' }}>{a.description}</div>}
+            </div>
+          ))}
+        </>
+      )}
+
+      {data?.publications?.length > 0 && (
+        <>
+          <div className={styles.elegantSection}>Publications</div>
+          {data.publications.map((p, i) => (
+            <div key={i} className={styles.entry}>
+              <div className={styles.entryTitle}>{p.title}</div>
+              <div className={styles.entrySubtitle}>{p.publisher} {p.date && `· ${p.date}`}</div>
+              {p.description && <div style={{ fontSize: '9px', color: '#6b7280', marginTop: '2px' }}>{p.description}</div>}
+            </div>
+          ))}
+        </>
+      )}
+
+      {data?.customSections?.length > 0 && data.customSections.map((cs, cIdx) => (
+        <div key={`cs-${cIdx}`}>
+          <div className={styles.elegantSection}>{cs.title || 'Additional Information'}</div>
+          {cs.items?.map((item, i) => (
+            <div key={i} className={styles.entry}>
+              <div className={styles.entryHeader}>
+                <div>
+                  <span className={styles.entryTitle}>{item.name}</span>
+                  {item.name && item.subtitle && <span className={styles.elegantAccent}> | </span>}
+                  {item.subtitle && <span>{item.subtitle}</span>}
+                </div>
+                {item.date && <span className={styles.entryDate}>{item.date}</span>}
+              </div>
+              {item.description && <div style={{ fontSize: '9px', color: '#6b7280', marginTop: '2px' }}>{item.description}</div>}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }

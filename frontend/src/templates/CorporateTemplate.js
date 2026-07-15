@@ -124,6 +124,73 @@ export default function CorporateTemplate({ data }) {
           ))}
         </>
       )}
+
+      {data?.volunteerExperience?.length > 0 && (
+        <>
+          <div className={styles.corporateSection}>Volunteer Experience</div>
+          {data.volunteerExperience.map((v, i) => (
+            <div key={i} className={styles.entry}>
+              <div className={styles.entryHeader}>
+                <div><span className={styles.entryTitle}>{v.role}</span>, {v.organization}</div>
+                <span className={styles.entryDate}>{v.startDate} – {v.current ? 'Present' : v.endDate}</span>
+              </div>
+              {v.description && <div style={{ fontSize: '10px', color: '#475569' }}>{v.description}</div>}
+            </div>
+          ))}
+        </>
+      )}
+
+      {data?.awards?.length > 0 && (
+        <>
+          <div className={styles.corporateSection}>Awards</div>
+          {data.awards.map((a, i) => (
+            <div key={i} className={styles.entry}>
+              <div className={styles.entryHeader}>
+                <div><span className={styles.entryTitle}>{a.title}</span>, {a.issuer}</div>
+                <span className={styles.entryDate}>{a.date}</span>
+              </div>
+              {a.description && <div style={{ fontSize: '10px', color: '#475569' }}>{a.description}</div>}
+            </div>
+          ))}
+        </>
+      )}
+
+      {data?.internships?.length > 0 && (
+        <>
+          <div className={styles.corporateSection}>Internships</div>
+          {data.internships.map((e, i) => (
+            <div key={i} className={styles.entry}>
+              <div className={styles.entryHeader}>
+                <div>
+                  <span className={styles.entryTitle}>{e.position}</span>, {e.company}
+                  {e.location ? `, ${e.location}` : ''}
+                </div>
+                <span className={styles.entryDate}>{e.startDate} – {e.current ? 'Present' : e.endDate}</span>
+              </div>
+              {e.description && <div style={{ fontSize: '10px', color: '#475569' }}>{e.description}</div>}
+            </div>
+          ))}
+        </>
+      )}
+
+      {data?.customSections?.length > 0 && data.customSections.map((cs, cIdx) => (
+        <div key={`cs-${cIdx}`}>
+          <div className={styles.corporateSection}>{cs.title || 'Additional Information'}</div>
+          {cs.items?.map((item, i) => (
+            <div key={i} className={styles.entry}>
+              <div className={styles.entryHeader}>
+                <div>
+                  {item.name && <span className={styles.entryTitle}>{item.name}</span>}
+                  {item.name && item.subtitle && ', '}
+                  {item.subtitle && <span>{item.subtitle}</span>}
+                </div>
+                {item.date && <span className={styles.entryDate}>{item.date}</span>}
+              </div>
+              {item.description && <div style={{ fontSize: '10px', color: '#475569' }}>{item.description}</div>}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
